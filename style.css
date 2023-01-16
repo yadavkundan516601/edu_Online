@@ -1,7 +1,7 @@
 .card > img{
-    width: fit-content;
+    width: 100%;
+    height: 30%;
     background-color: #000;
-    height: 300px;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -17,7 +17,8 @@
 }
 
 .social > a > i{
-    padding: 5px 10px;
+    padding: 10px 15px;
+    background-color: rgb(208, 175, 240);
 }
 button {
     border: none;
