@@ -16,6 +16,9 @@
     font-size: 18px;
 }
 
+.social > a > i{
+    padding: 5px 10px;
+}
 button {
     border: none;
     outline: 0;
