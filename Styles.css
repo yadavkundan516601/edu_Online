@@ -27,7 +27,12 @@
 body{
     height: 100vh;
     background: var(--body-color);
+    transition: var(--tran-05);
 
+}
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
 }
 body.dark{
     --body-color: #18191A;
@@ -60,19 +65,31 @@ body.dark{
     width: 250px;
     padding: 10px 14px;
     background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+.sidebar.close{
+    width: 88px
 }
 /*=======Resuable CSS ====*/
 .sidebar .text{
     font-size: 16px;
     font-weight: 500;
     color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
 
+}
+.sidebar.close .text{
+    opacity: 0;
 }
 
 .sidebar .image{
     min-width: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar  li{
@@ -131,7 +148,7 @@ header .image-text .header-text{
     position: absolute;
     top: 50%;
     right: -25px;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
     background: var(--primary-color);
@@ -140,20 +157,39 @@ header .image-text .header-text{
     justify-content: center;
     border-radius: 50%;
     color: var(--sidebar-color);
-    font-size: 22px; 
+    font-size: 22px;
+    transition: var(--tran-03); 
 
+}
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+}
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+.sidebar .menu{
+    margin-top: 35px;
 }
 .sidebar .search-box{
     background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+    cursor: pointer;
 }
 .search-box input{
     height: 100%;
     width: 100%;
     outline: none;
     border: none;
+    color: var(--text-color);
     border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
     background: var(--primary-color-light);
+    transition: var(--tran-05)
+    
 }
+
 .sidebar li a{
     height: 100%;
     width: 100%;
@@ -172,6 +208,10 @@ header .image-text .header-text{
 .sidebar li a:hover .text {
     color: var(--sidebar-color);
 }
+body.dark.sidebar li a:hover .icon,
+body.dark.sidebar li a:hover .text {
+    color: var(--text-color);
+}
 
 .sidebar .menu-bar{
     height: calc(100% - 50px);
@@ -182,6 +222,8 @@ header .image-text .header-text{
 
 }
 .menu-bar .mode{
+    position: relative;
+    border-radius: 6px;
     background: var(--primary-color-light);
 }
 .menu-bar .mode .moon-sun{
@@ -193,19 +235,30 @@ header .image-text .header-text{
 }
 .menu-bar .mode i{
     position: absolute;
-
+    transition: var(--tran-03);
 }
 .menu-bar .mode i.sun{
     opacity: 0;
 
 }
+body.dark menu-bar .mode i.sun{
+    opacity: 1;
+}
+body.dark menu-bar .mode i.moon{
+    opacity: 1;
+}
 .menu-bar .mode .toggle-switch{
+    position: absolute;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     min-width: 60px;
     cursor: pointer;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
 }
 .toggle-switch .switch{
     position: relative;
@@ -228,5 +281,24 @@ header .image-text .header-text{
 }
 body.dark .switch::before{
     left: 25px;
+
+}
+.home{
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+.sidebar.close ~ .home{
+    left: 88px;
+    width: calc(100% -88px);
 
 }
