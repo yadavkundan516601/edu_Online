@@ -10,9 +10,9 @@
 
 :root{
     /*===== Colors =====*/    
-    --body-color: #cacdd4;
-    --sidebar-color: rgb(247, 228, 228);
-    --primary-color: #b236d8;
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #bc17ee;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
@@ -27,6 +27,15 @@
 body{
     height: 100vh;
     background: var(--body-color);
+
+}
+body.dark{
+    --body-color: #18191A;
+    --sidebar-color: #586464;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #FFF;
+    --text-color: #CCC;
 
 }
 /*=======Resuable CSS ====*/
@@ -215,4 +224,9 @@ header .image-text .header-text{
     left: 5px;
     transform: translateY(-50%);
     background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+body.dark .switch::before{
+    left: 25px;
+
 }
