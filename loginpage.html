@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="logincss.css">
+</head>
+<body>
+   <div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div> 
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+            <img src="images/fb.png">
+            <img src="images/gp.png">
+            <img src="images/tw.png">
+        </div>
+        <form method="post" action="https://script.google.com/macros/s/AKfycbywFeUYogx-OXklyq4K8sGt3K569WseCyMZGSBK12wsd1g-woTN3-gSN10qOqSL8KcI3Q/exec"
+        id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="Email_id" required>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log in</button>
+        </form>
+        <form method="post" action="https://script.google.com/macros/s/AKfycbywFeUYogx-OXklyq4K8sGt3K569WseCyMZGSBK12wsd1g-woTN3-gSN10qOqSL8KcI3Q/exec"
+         id="register" class="input-group">
+         <label for="name"></label>
+            <input type="text" class="input-field" placeholder="Name" required>
+
+            <label for="email_id"></label>
+            <input type="email" class="input-field" placeholder="email_Id" required>
+
+            <label for="mobile_number"></label>
+            <input type="number" class="input-field" placeholder="mobile_number" required>
+
+            <label for="Enter_password"></label>
+            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I Agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div> 
+</div>
+<script>
+    
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register(){
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+    function login(){
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+    
+</script> 
+
+</body>
+</html>    
