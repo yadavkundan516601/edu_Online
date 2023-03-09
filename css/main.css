@@ -3180,3 +3180,8 @@ font-weight: 800;
   width: 100%;
   font-size: 18px;
 }
+
+.card button a{
+  text-decoration: none;
+  color: white;
+}
